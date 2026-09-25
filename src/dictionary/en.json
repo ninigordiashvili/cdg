@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "title": "Foundation for CDG Syndrome and Autism",
+    "description": "Foundation for children and adolescents with CDG syndrome, other rare diseases and autism. Care for children with special needs."
+  },
+  "nav": {
+    "home": "Home",
+    "cdg": "What is CDG?",
+    "autism": "What is autism?",
+    "rareDiseases": "Rare diseases",
+    "about": "About us",
+    "events": "Events",
+    "beneficiary": "Become a beneficiary",
+    "contact": "Contact",
+    "donate": "Donate",
+    "menu": "Open menu",
+    "close": "Close menu",
+    "switchLang": "ქართული",
+    "switchLangShort": "ქარ",
+    "learn": "Learn"
+  },
+  "common": {
+    "readMore": "Read more",
+    "onThisPage": "On this page",
+    "medicalNote": "This information is for general education and does not replace advice from a doctor. Every child is different — please talk to your child’s physician about diagnosis and treatment.",
+    "comingSoon": "Coming soon",
+    "helpTitle": "Need help or have a question?",
+    "helpText": "If your family is affected by CDG, autism or another rare disease, reach out — you are not alone.",
+    "helpBtn": "Apply for support",
+    "donateBtn": "Donate now"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Foundation for CDG Syndrome and Autism",
+      "title": "Together, no family faces a rare diagnosis alone",
+      "text": "We support children living with congenital disorders of glycosylation (CDG), autism and other rare diseases — and the families who care for them — through information, awareness and direct help.",
+      "primary": "Donate",
+      "secondary": "Become a beneficiary",
+      "tagline": "Care for children with special needs"
+    },
+    "stats": [
+      {
+        "value": "130+",
+        "label": "known types of CDG"
+      },
+      {
+        "value": "1 in 100",
+        "label": "children worldwide are autistic (WHO)"
+      },
+      {
+        "value": "300M+",
+        "label": "people live with a rare disease"
+      }
+    ],
+    "cdg": {
+      "eyebrow": "Understanding the diagnosis",
+      "title": "What is CDG?",
+      "text": "Congenital disorders of glycosylation (CDG) are a large group of rare genetic conditions. They affect how the body attaches sugar chains (glycans) to proteins and fats — a process almost every cell depends on. Because of this, CDG can affect many organs at once: the brain, muscles, liver, eyes and heart.",
+      "link": "Learn more about CDG"
+    },
+    "autism": {
+      "eyebrow": "A different way of experiencing the world",
+      "title": "What is autism?",
+      "text": "Autism spectrum disorder (ASD) is a lifelong neurodevelopmental condition that shapes how a person communicates, interacts with others and experiences the world. It is a spectrum: every autistic person has their own strengths and needs, and early, individual support makes a real difference.",
+      "link": "Learn more about autism"
+    },
+    "rare": {
+      "eyebrow": "Rubric",
+      "title": "Rare diseases",
+      "text": "A rare disease may affect only a handful of people — but together, rare diseases touch millions of families. In this section we introduce rare conditions in simple language.",
+      "link": "See all rare diseases"
+    },
+    "events": {
+      "eyebrow": "Awareness campaigns",
+      "title": "Days we raise our voice",
+      "link": "All events"
+    },
+    "help": {
+      "eyebrow": "How you can help",
+      "title": "Every contribution brings a child closer to the care they need",
+      "beneficiary": {
+        "title": "Become a beneficiary",
+        "text": "Is your child living with CDG, autism or another rare disease? Fill in the application form and our team will contact you.",
+        "btn": "Apply now"
+      },
+      "donate": {
+        "title": "Support a family",
+        "text": "Your donation funds therapies, diagnostics, medication and equipment for children who need them most.",
+        "btn": "Donate"
+      }
+    }
+  },
+  "cdg": {
+    "eyebrow": "Condition overview",
+    "title": "Congenital disorders of glycosylation (CDG)",
+    "lead": "CDG is a family of more than 130 rare, inherited metabolic conditions. Most children are diagnosed in infancy, and symptoms can range from mild to severe.",
+    "sections": [
+      {
+        "id": "what-is-cdg",
+        "title": "What is CDG?",
+        "paragraphs": [
+          "Congenital disorders of glycosylation (CDG) are a large group of rare genetic disorders that affect glycosylation — the process of adding sugar building blocks, called glycans, to proteins and fats in cells throughout the body.",
+          "Glycans help proteins fold correctly, travel to the right place and do their job. When glycosylation does not work properly, many body systems can be affected at the same time. CDG is not related to diabetes, even though it involves sugars.",
+          "The most common type is PMM2-CDG (formerly called CDG-Ia). Each type is named after the gene that causes it."
+        ]
+      },
+      {
+        "id": "causes",
+        "title": "Causes",
+        "paragraphs": [
+          "CDG is caused by changes (variants) in genes that control glycosylation. More than 400 genes take part in this process, and changes in over 130 of them are known to cause CDG.",
+          "Most types are inherited in an autosomal recessive way: a child is affected when they receive a non-working copy of the gene from both parents. Parents are usually healthy carriers. When both parents are carriers, each pregnancy has a 25% chance of being affected.",
+          "A few types are inherited in other ways (autosomal dominant or X-linked), and some happen because of a new (de novo) change in the child’s genes."
+        ]
+      },
+      {
+        "id": "symptoms",
+        "title": "Signs and symptoms",
+        "paragraphs": [
+          "Symptoms vary a lot between types and even between children with the same type. They often appear in infancy and may include:"
+        ],
+        "list": [
+          "Low muscle tone (hypotonia) and developmental delay",
+          "Feeding difficulties and poor growth",
+          "Crossed or misaligned eyes (strabismus) and vision problems",
+          "Unusual fat distribution, inverted nipples or other physical features",
+          "Liver problems and blood clotting abnormalities",
+          "Seizures and stroke-like episodes",
+          "Balance and coordination problems (ataxia)",
+          "Heart, kidney or hormone problems"
+        ],
+        "after": "In older children and adults, problems with balance, speech, puberty, spine curvature (scoliosis), joint stiffness and vision may become more noticeable."
+      },
+      {
+        "id": "diagnosis",
+        "title": "Diagnosis",
+        "paragraphs": [
+          "Because CDG is rare and symptoms overlap with other conditions, diagnosis can take time. A doctor may suspect CDG when a child has problems in several body systems at once.",
+          "A blood test called transferrin glycosylation analysis (isoelectric focusing or mass spectrometry) can show abnormal glycans. The exact type is then confirmed with genetic testing — a gene panel, exome or genome sequencing.",
+          "Once the family’s genetic variant is known, genetic counselling can help parents understand the chance of CDG in future pregnancies."
+        ]
+      },
+      {
+        "id": "treatment",
+        "title": "Treatment and care",
+        "paragraphs": [
+          "For most types of CDG there is no cure yet, so care focuses on managing symptoms and supporting development. A team of specialists usually works together:"
+        ],
+        "list": [
+          "Neurologist, geneticist and metabolic specialist",
+          "Nutrition support, sometimes including a feeding tube",
+          "Physical, occupational and speech therapy",
+          "Seizure medication when needed",
+          "Monitoring of the liver, blood clotting, heart and hormones",
+          "Eye care, glasses and orthopaedic support"
+        ],
+        "after": "A few types can be treated directly: for example, MPI-CDG responds to oral mannose, and some other types may benefit from specific sugar supplements. Research into new therapies is ongoing worldwide."
+      },
+      {
+        "id": "outlook",
+        "title": "Outlook",
+        "paragraphs": [
+          "The outlook depends on the type of CDG and how severe it is. Some children have mild symptoms, while others need lifelong care and regular follow-up.",
+          "With early diagnosis, coordinated medical care, therapy and a supportive community, many children with CDG make steady progress and enjoy a good quality of life."
+        ]
+      }
+    ]
+  },
+  "autism": {
+    "eyebrow": "Condition overview",
+    "title": "Autism spectrum disorder (ASD)",
+    "lead": "Autism is a lifelong neurodevelopmental condition. It is not an illness to be cured, but a different way of thinking, communicating and experiencing the world — one that deserves understanding and the right support.",
+    "sections": [
+      {
+        "id": "what-is-autism",
+        "title": "What is autism?",
+        "paragraphs": [
+          "Autism spectrum disorder (ASD) affects how a person communicates, interacts with other people, and processes information from their senses. The word “spectrum” means that autism looks different in every person — some people need a lot of daily support, while others live fully independently.",
+          "According to the World Health Organization, about 1 in 100 children worldwide is autistic. Autism is diagnosed more often in boys than in girls."
+        ]
+      },
+      {
+        "id": "causes",
+        "title": "Causes",
+        "paragraphs": [
+          "There is no single cause of autism. Research shows that genetics plays the largest role, together with factors that affect early brain development before birth.",
+          "Autism is not caused by parenting, and large scientific studies have shown that vaccines do not cause autism.",
+          "Autism can occur on its own or together with other conditions, including some rare genetic disorders such as CDG, Fragile X syndrome or Phelan-McDermid syndrome."
+        ]
+      },
+      {
+        "id": "signs",
+        "title": "Early signs",
+        "paragraphs": [
+          "Signs usually appear in the first two to three years of life. Parents may notice that their child:"
+        ],
+        "list": [
+          "Rarely makes eye contact or responds to their name",
+          "Does not point, wave or share interest with others",
+          "Has delayed speech or loses words they used before",
+          "Repeats movements, sounds or phrases",
+          "Strongly prefers routines and is upset by changes",
+          "Is very sensitive — or not sensitive — to sounds, lights, textures or pain",
+          "Has intense, focused interests"
+        ],
+        "after": "Having one of these signs does not mean a child is autistic. If you are worried, talk to your paediatrician — early evaluation is always better than waiting."
+      },
+      {
+        "id": "diagnosis",
+        "title": "Diagnosis",
+        "paragraphs": [
+          "There is no blood test for autism. It is diagnosed by specialists — such as a child neurologist, child psychiatrist or developmental psychologist — who observe the child’s behaviour and development and talk with the family.",
+          "Screening questionnaires such as the M-CHAT can be used at routine check-ups between 18 and 24 months. Autism can be reliably diagnosed from around the age of two."
+        ]
+      },
+      {
+        "id": "support",
+        "title": "Support and therapy",
+        "paragraphs": [
+          "Every autistic child is different, so support should be built around their individual strengths and needs. Early intervention can make a big difference. Common approaches include:"
+        ],
+        "list": [
+          "Speech and language therapy, including alternative communication (AAC)",
+          "Occupational therapy and sensory support",
+          "Behavioural and developmental therapies",
+          "Special education and inclusive school support",
+          "Parent training and family support",
+          "Medical care for related conditions such as sleep problems or epilepsy"
+        ]
+      },
+      {
+        "id": "living",
+        "title": "Living with autism",
+        "paragraphs": [
+          "With understanding, acceptance and the right support, autistic children grow, learn and build meaningful lives. An inclusive society — at school, in the clinic and in everyday life — is one of the most powerful forms of help."
+        ]
+      }
+    ]
+  },
+  "rare": {
+    "eyebrow": "Rubric",
+    "title": "Rare diseases",
+    "lead": "A disease is called rare when it affects fewer than 1 in 2,000 people. There are more than 6,000 known rare diseases, and about 70% of them begin in childhood. Here we introduce some of them in plain language.",
+    "items": [
+      {
+        "name": "PMM2-CDG",
+        "tag": "CDG",
+        "text": "The most common type of CDG, caused by changes in the PMM2 gene. It often causes low muscle tone, crossed eyes, balance problems and developmental delay, and can affect the liver, heart and blood clotting."
+      },
+      {
+        "name": "MPI-CDG",
+        "tag": "CDG",
+        "text": "A type of CDG that mainly affects the liver and gut, causing diarrhoea, low blood sugar and clotting problems. Unlike most CDG types, it can be treated with oral mannose — which is why early diagnosis matters."
+      },
+      {
+        "name": "Rett syndrome",
+        "tag": "Neurodevelopmental",
+        "text": "A genetic condition, usually caused by changes in the MECP2 gene, that mostly affects girls. After a period of typical development, children lose purposeful hand use and speech, and develop repetitive hand movements."
+      },
+      {
+        "name": "Angelman syndrome",
+        "tag": "Neurodevelopmental",
+        "text": "Caused by loss of function of the UBE3A gene on chromosome 15. Children have severe speech delay, balance problems, seizures, and often a very happy, excitable personality."
+      },
+      {
+        "name": "Phelan-McDermid syndrome",
+        "tag": "Chromosomal",
+        "text": "Caused by a deletion at the end of chromosome 22 (22q13) or changes in the SHANK3 gene. It causes low muscle tone, delayed or absent speech and developmental delay, and is often associated with autism."
+      },
+      {
+        "name": "Fragile X syndrome",
+        "tag": "Genetic",
+        "text": "The most common inherited cause of intellectual disability, caused by changes in the FMR1 gene. It can cause learning difficulties, anxiety and hyperactivity, and many affected children are also autistic."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Born from a family’s journey",
+    "lead": "The Foundation for CDG Syndrome and Autism was created by parents who know from their own experience how hard the road to a rare diagnosis can be.",
+    "story": {
+      "title": "Our personal story and mission",
+      "paragraphs": [
+        "[Placeholder — the founders’ personal story will be added here: how the family received the diagnosis, what challenges they faced, and why they decided to start the foundation.]",
+        "Our mission is to make sure that no family in Georgia faces CDG, autism or another rare disease alone — by sharing reliable information, raising awareness and helping children get the diagnostics, therapy and care they need."
+      ]
+    },
+    "values": [
+      {
+        "title": "Information",
+        "text": "Clear, reliable information about CDG, autism and rare diseases in Georgian."
+      },
+      {
+        "title": "Awareness",
+        "text": "Campaigns that help society, doctors and schools understand and include our children."
+      },
+      {
+        "title": "Direct help",
+        "text": "Financial support for diagnostics, therapy, medication and equipment."
+      },
+      {
+        "title": "Community",
+        "text": "A network where parents can share experience, find answers and support one another."
+      }
+    ],
+    "history": {
+      "title": "History of the foundation",
+      "paragraphs": [
+        "[Placeholder — the foundation’s history will be added here: when it was founded, key milestones, partners and the children and families it has helped so far.]"
+      ]
+    }
+  },
+  "events": {
+    "eyebrow": "Events",
+    "title": "Awareness campaigns",
+    "lead": "Every year we join the global community on key awareness days — to tell our children’s stories, share knowledge and bring people together.",
+    "items": [
+      {
+        "day": "16",
+        "month": "May",
+        "title": "World CDG Awareness Day",
+        "text": "On 16 May, families, doctors and researchers around the world raise awareness of congenital disorders of glycosylation. It is a day to share stories, support research and help more children get an early diagnosis.",
+        "points": [
+          "Information campaigns on social media",
+          "Meetings with families and specialists",
+          "Sharing CDG stories from Georgia"
+        ]
+      },
+      {
+        "day": "2",
+        "month": "April",
+        "title": "World Autism Awareness Day",
+        "text": "2 April is the United Nations’ World Autism Awareness Day. We use it to promote understanding, acceptance and inclusion of autistic children and adults in every part of life.",
+        "points": [
+          "Awareness events in schools and public spaces",
+          "Light It Up Blue and inclusion initiatives",
+          "Educational materials for parents and teachers"
+        ]
+      }
+    ],
+    "follow": "Follow our social media pages to hear about upcoming events."
+  },
+  "beneficiary": {
+    "eyebrow": "Become a beneficiary",
+    "title": "Apply for support",
+    "lead": "If your child is living with CDG, autism or another rare disease and your family needs help with diagnostics, therapy, treatment, medication or equipment, you can apply to the foundation.",
+    "whoTitle": "Who can apply",
+    "who": [
+      "Parents or legal guardians of a child (under 18) with CDG, autism or another rare disease",
+      "Families who need help covering costs that are not paid by the state or insurance",
+      "Children with a confirmed diagnosis or undergoing diagnostic investigation"
+    ],
+    "stepsTitle": "How it works",
+    "steps": [
+      {
+        "title": "Fill in the form",
+        "text": "Provide information about the child, the parent or guardian, the family’s finances and the child’s medical condition."
+      },
+      {
+        "title": "Describe the need",
+        "text": "Tell us what support you need — therapy, consultation, treatment, medication or equipment — and the amount requested."
+      },
+      {
+        "title": "Attach documents",
+        "text": "Prepare medical documents, the child’s photos and other supporting files."
+      },
+      {
+        "title": "Review and contact",
+        "text": "Our team reviews each application carefully and contacts the family about next steps."
+      }
+    ],
+    "docsTitle": "Documents to prepare",
+    "docs": [
+      "Medical records confirming the diagnosis (doctor’s conclusion, genetic test results)",
+      "Invoices or cost estimates for the requested therapy, treatment or equipment",
+      "Identity documents of the child and parent / guardian",
+      "Photos of the child (with consent for their use)",
+      "Proof of any other assistance the family already receives"
+    ],
+    "formTitle": "Application form",
+    "formText": "The form is in Georgian. It takes about 10–15 minutes to complete. If the form does not load below, open it in a new tab.",
+    "openForm": "Open the form in a new tab",
+    "privacy": "Your information is treated confidentially and used only to review your application."
+  },
+  "donate": {
+    "eyebrow": "Donate",
+    "title": "Your support changes a child’s life",
+    "lead": "Every donation — large or small — helps a child receive diagnostics, therapy and care. Thank you for standing with our families.",
+    "online": {
+      "title": "Donate online",
+      "text": "Pay securely by card or Apple Pay on our bank’s payment page. It only takes a minute.",
+      "btn": "Donate now"
+    },
+    "applePay": {
+      "title": "Apple Pay",
+      "text": "On iPhone, iPad and Mac, choose Apple Pay on the payment page to donate in one tap."
+    },
+    "bank": {
+      "title": "Bank transfer",
+      "text": "You can also transfer your donation directly to the foundation’s bank account.",
+      "recipient": "Recipient",
+      "purpose": "Purpose: Donation",
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "impact": {
+      "title": "Where your donation goes",
+      "items": [
+        "Genetic and laboratory diagnostics",
+        "Speech, occupational and physical therapy",
+        "Medication and special nutrition",
+        "Medical and rehabilitation equipment",
+        "Awareness campaigns and educational materials"
+      ]
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "lead": "Have a question, want to volunteer or partner with us? Write to us on social media — we will be happy to hear from you.",
+    "facebook": "Facebook",
+    "facebookText": "News, stories and events",
+    "instagram": "Instagram",
+    "instagramText": "Photos and everyday moments",
+    "email": "Email",
+    "phone": "Phone",
+    "formTitle": "Need support for your child?",
+    "formText": "Families can apply for help through our application form.",
+    "formBtn": "Become a beneficiary"
+  },
+  "footer": {
+    "tagline": "Support, information and hope for children with CDG, autism and rare diseases.",
+    "explore": "Explore",
+    "help": "Get involved",
+    "follow": "Follow us",
+    "rights": "Foundation for CDG Syndrome and Autism. All rights reserved."
+  }
+}
