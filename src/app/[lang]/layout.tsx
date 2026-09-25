@@ -11,9 +11,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(props: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
-  const { lang } = await props.params;
+  const lang = (await props.params).lang as Locale;
   const dictionary = await getDictionary(lang);
   return {
     title: { default: dictionary.meta.title, template: `%s — ${dictionary.meta.title}` },
@@ -28,9 +28,9 @@ export async function generateMetadata(props: {
 
 export default async function Root(props: {
   children: React.ReactNode;
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: string }>;
 }) {
-  const { lang } = await props.params;
+  const lang = (await props.params).lang as Locale;
   const dictionary = await getDictionary(lang);
 
   return (
