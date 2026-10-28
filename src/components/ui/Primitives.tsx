@@ -26,7 +26,7 @@ export const Section = styled.section<{ $tone?: 'plain' | 'cream' | 'sage' }>`
 
 export const Eyebrow = styled.span`
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -35,41 +35,41 @@ export const Eyebrow = styled.span`
 `;
 
 export const H1 = styled.h1`
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   color: ${colors.ink};
   font-feature-settings: 'case';
 `;
 
 export const H2 = styled.h2`
-  font-size: clamp(26px, 3.4vw, 40px);
+  font-size: clamp(1.625rem, 3.4vw, 2.5rem);
   font-weight: 700;
   color: ${colors.ink};
   font-feature-settings: 'case';
 `;
 
 export const H3 = styled.h3`
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: ${colors.ink};
 `;
 
 export const Lead = styled.p`
-  font-size: 18px;
+  font-size: 1.125rem;
   color: ${colors.muted};
   max-width: 720px;
 
   ${mq.mobile} {
-    font-size: 16px;
+    font-size: 1rem;
   }
 `;
 
 export const Text = styled.p`
-  font-size: 17px;
+  font-size: 1.0625rem;
   color: ${colors.muted};
 
   ${mq.mobile} {
-    font-size: 16px;
+    font-size: 1rem;
   }
 `;
 
@@ -82,7 +82,7 @@ const buttonStyles = css<{ $variant?: 'primary' | 'secondary' | 'light' }>`
   padding: 12px 26px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
   border: 2px solid transparent;
   cursor: pointer;
@@ -176,10 +176,10 @@ export const CheckList = styled.ul`
     position: relative;
     padding-left: 32px;
     color: ${colors.muted};
-    font-size: 17px;
+    font-size: 1.0625rem;
 
     ${mq.mobile} {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 

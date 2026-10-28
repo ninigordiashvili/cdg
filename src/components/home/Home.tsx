@@ -17,7 +17,7 @@ import {
   TextLink,
   localePath,
 } from '../ui/Primitives';
-import { ArrowRight, Heart } from '../ui/Icons';
+import { ArrowRight } from '../ui/Icons';
 import { DiseaseCard, DiseaseGrid } from '../pages/RareDiseases';
 import { EventCard } from '../pages/Events';
 
@@ -66,7 +66,7 @@ const HeroContent = styled.div`
 `;
 
 const Tagline = styled.p`
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -113,14 +113,14 @@ const Stat = styled.div`
 
   strong {
     display: block;
-    font-size: clamp(28px, 3vw, 38px);
+    font-size: clamp(1.75rem, 3vw, 2.375rem);
     color: ${colors.brandDark};
     line-height: 1.1;
   }
 
   span {
     color: ${colors.muted};
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   ${mq.mobile} {
@@ -176,9 +176,9 @@ const FeatureVisual = styled.div<{ $tone: 'sage' | 'cream' }>`
     position: absolute;
     left: 32px;
     top: 24px;
-    font-size: clamp(48px, 7vw, 88px);
+    font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 700;
-    color: ${colors.white};
+    color: ${colors.brandDark};
     letter-spacing: -0.02em;
     line-height: 1;
   }
@@ -252,7 +252,7 @@ const HelpCard = styled(Card)<{ $accent?: boolean }>`
   border-color: ${({ $accent }) => ($accent ? colors.brandDark : colors.line)};
 
   h3 {
-    font-size: 26px;
+    font-size: 1.625rem;
     color: ${({ $accent }) => ($accent ? colors.white : colors.ink)};
   }
 
@@ -295,10 +295,7 @@ export default function Home({ dictionary, rare, events, lang }: HomeProps) {
             <H1>{hero.title}</H1>
             <Lead>{hero.text}</Lead>
             <HeroButtons>
-              <ButtonLink href={href('/donate')}>
-                <Heart size={18} />
-                {hero.primary}
-              </ButtonLink>
+              <ButtonLink href={href('/donate')}>{hero.primary}</ButtonLink>
               <ButtonLink href={href('/beneficiary')} $variant="secondary">
                 {hero.secondary}
               </ButtonLink>
@@ -403,7 +400,6 @@ export default function Home({ dictionary, rare, events, lang }: HomeProps) {
               <H3>{dictionary.help.donate.title}</H3>
               <Text>{dictionary.help.donate.text}</Text>
               <ButtonLink href={href('/donate')} $variant="light">
-                <Heart size={18} />
                 {dictionary.help.donate.btn}
               </ButtonLink>
             </HelpCard>

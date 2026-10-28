@@ -14,8 +14,8 @@ export const site = {
   bankAccounts: [] as { bank: string; iban: string }[],
   bankRecipient: '',
 
-  facebookUrl: '',
+  facebookUrl: 'https://www.facebook.com/profile.php?id=61578793896452',
   instagramUrl: '',
-  email: '',
-  phone: '',
+  email: 'cdggeorgiafoundation@gmail.com',
+  phone: '598 71 99 98',
 };

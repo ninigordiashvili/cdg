@@ -29,7 +29,7 @@ const Toc = styled.nav`
   align-self: start;
 
   p {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -64,7 +64,7 @@ const TocLink = styled.a<{ $active: boolean }>`
   margin-left: -2px;
   padding: 8px 16px;
   border-left: 2px solid ${({ $active }) => ($active ? colors.brandDark : 'transparent')};
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: ${({ $active }) => ($active ? 700 : 400)};
   color: ${({ $active }) => ($active ? colors.brandDark : colors.muted)};
   text-decoration: none;
@@ -79,7 +79,7 @@ const TocLink = styled.a<{ $active: boolean }>`
     border: 1px solid ${colors.line};
     border-radius: 999px;
     background: ${colors.white};
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 `;
 
@@ -99,7 +99,7 @@ const Block = styled.section`
   gap: 16px;
 
   h2 {
-    font-size: clamp(24px, 2.6vw, 32px);
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
   }
 `;
 
@@ -109,7 +109,7 @@ const Note = styled.aside`
   background: ${colors.cream};
   border-left: 4px solid ${colors.brand};
   color: ${colors.ink};
-  font-size: 15px;
+  font-size: 0.9375rem;
 `;
 
 export default function ConditionPage({

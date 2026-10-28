@@ -61,13 +61,13 @@ const Brand = styled.div`
   }
 
   p {
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: ${colors.sage};
   }
 `;
 
 const ColumnTitle = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -82,7 +82,7 @@ const LinkList = styled.ul`
   a {
     color: ${colors.sageSoft};
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.9375rem;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -99,7 +99,7 @@ const Bottom = styled.div`
   margin-top: 56px;
   padding-top: 24px;
   border-top: 1px solid rgba(220, 233, 207, 0.2);
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${colors.sage};
 `;
 

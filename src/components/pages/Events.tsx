@@ -36,13 +36,13 @@ const DateBadge = styled.div`
   color: ${colors.brandDeep};
 
   strong {
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 1;
   }
 
   span {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 0.9375rem;
     margin-top: 6px;
   }
 
@@ -52,7 +52,7 @@ const DateBadge = styled.div`
     border-radius: 18px;
 
     strong {
-      font-size: 36px;
+      font-size: 2.25rem;
     }
   }
 `;
@@ -62,8 +62,9 @@ const Body = styled.div`
   gap: 14px;
   align-content: start;
 
+  h2,
   h3 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 `;
 
@@ -75,7 +76,7 @@ export function EventCard({ item, compact }: { item: Item; compact?: boolean }) 
         <span>{item.month}</span>
       </DateBadge>
       <Body>
-        <H3>{item.title}</H3>
+        <H3 as="h2">{item.title}</H3>
         <Text>{item.text}</Text>
         {!compact && (
           <CheckList>
