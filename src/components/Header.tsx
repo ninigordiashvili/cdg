@@ -8,7 +8,7 @@ import type { Dictionary } from '@/get-dictionary';
 import type { Locale } from '@/i18n-config';
 import { colors } from '@/theme';
 import { ButtonLink, Container, localePath } from './ui/Primitives';
-import { Heart } from './ui/Icons';
+import AccessibilityMenu from './AccessibilityMenu';
 
 const NAV_BREAKPOINT = '1180px';
 
@@ -16,7 +16,7 @@ const StyledHeader = styled.header<{ $scrolled: boolean }>`
   position: sticky;
   top: 0;
   z-index: 50;
-  background: ${({ $scrolled }) => ($scrolled ? 'rgba(253, 252, 247, 0.94)' : colors.bg)};
+  background: ${colors.bg};
   backdrop-filter: blur(10px);
   border-bottom: 1px solid ${({ $scrolled }) => ($scrolled ? colors.line : 'transparent')};
   transition: border-color 0.2s ease;
@@ -63,7 +63,7 @@ const Nav = styled.nav`
 const NavLink = styled(Link)<{ $active?: boolean }>`
   padding: 10px 12px;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   white-space: nowrap;
   text-decoration: none;
@@ -79,7 +79,7 @@ const Dropdown = styled.div`
   position: relative;
 
   &:hover > div,
-  &:focus-within > div {
+  & > div[data-open='true'] {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, 0);
@@ -94,7 +94,7 @@ const DropdownTrigger = styled.button<{ $active?: boolean }>`
   padding: 10px 12px;
   border: 0;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 700;
   cursor: pointer;
   color: ${({ $active }) => ($active ? colors.brandDark : colors.ink)};
@@ -147,11 +147,11 @@ const LangSwitch = styled(Link)`
   align-items: center;
   justify-content: center;
   min-width: 48px;
-  height: 40px;
+  height: 48px;
   padding: 0 12px;
   border-radius: 999px;
   border: 1px solid ${colors.line};
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
   color: ${colors.ink};
@@ -163,8 +163,9 @@ const LangSwitch = styled(Link)`
 `;
 
 const DonateButton = styled(ButtonLink)`
-  min-height: 44px;
-  padding: 10px 20px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0 22px;
 
   @media (max-width: 480px) {
     display: none;
@@ -173,8 +174,8 @@ const DonateButton = styled(ButtonLink)`
 
 const Burger = styled.button`
   display: none;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border: 0;
   border-radius: 50%;
   background: ${colors.sageSoft};
@@ -229,7 +230,7 @@ const Drawer = styled.div<{ $open: boolean }>`
 `;
 
 const DrawerGroupTitle = styled.p`
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -245,7 +246,7 @@ const DrawerLink = styled(Link)<{ $active?: boolean }>`
   display: block;
   padding: 14px 8px;
   border-bottom: 1px solid ${colors.line};
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   text-decoration: none;
   color: ${({ $active }) => ($active ? colors.brandDark : colors.ink)};
@@ -258,19 +259,25 @@ const DrawerDonate = styled(ButtonLink)`
 
 export default function Header({
   dictionary,
+  a11y,
   lang,
 }: {
   dictionary: Dictionary['nav'];
+  a11y: Dictionary['a11y'];
   lang: Locale;
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [learnOpen, setLearnOpen] = useState(false);
   const pathname = usePathname();
 
   const pathWithoutLocale = pathname.replace(`/${lang}`, '') || '';
   const alternate: Locale = lang === 'en' ? 'ge' : 'en';
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setLearnOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -314,14 +321,23 @@ export default function Header({
           />
         </Logo>
 
-        <Nav aria-label="Main">
-          <NavLink href={href('')} $active={isActive('')}>
+        <Nav aria-label={lang === 'ge' ? 'მთავარი ნავიგაცია' : 'Main'}>
+          <NavLink
+            href={href('')}
+            $active={isActive('')}
+            aria-current={isActive('') ? 'page' : undefined}
+          >
             {dictionary.home}
           </NavLink>
-          <Dropdown>
+          <Dropdown
+            onKeyDown={(e) => e.key === 'Escape' && setLearnOpen(false)}
+            onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setLearnOpen(false)}
+          >
             <DropdownTrigger
               type="button"
-              aria-haspopup="true"
+              aria-expanded={learnOpen}
+              aria-controls="learn-menu"
+              onClick={() => setLearnOpen((v) => !v)}
               $active={learnLinks.some((l) => isActive(l.path))}
             >
               {dictionary.learn}
@@ -329,7 +345,7 @@ export default function Header({
                 <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" />
               </svg>
             </DropdownTrigger>
-            <DropdownPanel>
+            <DropdownPanel id="learn-menu" data-open={learnOpen}>
               {learnLinks.map((l) => (
                 <Link key={l.path} href={href(l.path)}>
                   {l.title}
@@ -338,24 +354,27 @@ export default function Header({
             </DropdownPanel>
           </Dropdown>
           {mainLinks.map((l) => (
-            <NavLink key={l.path} href={href(l.path)} $active={isActive(l.path)}>
+            <NavLink
+              key={l.path}
+              href={href(l.path)}
+              $active={isActive(l.path)}
+              aria-current={isActive(l.path) ? 'page' : undefined}
+            >
               {l.title}
             </NavLink>
           ))}
         </Nav>
 
         <Actions>
+          <AccessibilityMenu dictionary={a11y} />
           <LangSwitch
             href={`/${alternate}${pathWithoutLocale}`}
-            aria-label={dictionary.switchLang}
+            aria-label={`${dictionary.switchLangShort} — ${dictionary.switchLang}`}
             lang={alternate === 'ge' ? 'ka' : 'en'}
           >
             {dictionary.switchLangShort}
           </LangSwitch>
-          <DonateButton href={href('/donate')}>
-            <Heart size={18} />
-            {dictionary.donate}
-          </DonateButton>
+          <DonateButton href={href('/donate')}>{dictionary.donate}</DonateButton>
           <Burger
             type="button"
             aria-label={open ? dictionary.close : dictionary.menu}
@@ -369,26 +388,37 @@ export default function Header({
         </Actions>
       </Bar>
 
-      <Drawer id="mobile-menu" $open={open} aria-hidden={!open}>
-        <DrawerLink href={href('')} $active={isActive('')}>
+      <Drawer id="mobile-menu" $open={open} inert={!open}>
+        <DrawerLink
+          href={href('')}
+          $active={isActive('')}
+          aria-current={isActive('') ? 'page' : undefined}
+        >
           {dictionary.home}
         </DrawerLink>
         <DrawerGroupTitle>{dictionary.learn}</DrawerGroupTitle>
         {learnLinks.map((l) => (
-          <DrawerLink key={l.path} href={href(l.path)} $active={isActive(l.path)}>
+          <DrawerLink
+            key={l.path}
+            href={href(l.path)}
+            $active={isActive(l.path)}
+            aria-current={isActive(l.path) ? 'page' : undefined}
+          >
             {l.title}
           </DrawerLink>
         ))}
         <DrawerSpacer />
         {mainLinks.map((l) => (
-          <DrawerLink key={l.path} href={href(l.path)} $active={isActive(l.path)}>
+          <DrawerLink
+            key={l.path}
+            href={href(l.path)}
+            $active={isActive(l.path)}
+            aria-current={isActive(l.path) ? 'page' : undefined}
+          >
             {l.title}
           </DrawerLink>
         ))}
-        <DrawerDonate href={href('/donate')}>
-          <Heart size={18} />
-          {dictionary.donate}
-        </DrawerDonate>
+        <DrawerDonate href={href('/donate')}>{dictionary.donate}</DrawerDonate>
       </Drawer>
     </StyledHeader>
   );

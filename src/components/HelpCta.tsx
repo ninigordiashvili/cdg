@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import type { Dictionary } from '@/get-dictionary';
 import { colors, mq } from '@/theme';
 import { ButtonLink, Container, H2, localePath } from './ui/Primitives';
-import { Heart } from './ui/Icons';
 
 const Box = styled.div`
   display: flex;
@@ -17,7 +16,7 @@ const Box = styled.div`
 
   h2 {
     color: ${colors.white};
-    font-size: clamp(24px, 2.6vw, 32px);
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
   }
 
   p {
@@ -65,7 +64,6 @@ export default function HelpCta({ common, lang }: { common: Dictionary['common']
         </div>
         <Buttons>
           <ButtonLink href={localePath(lang, '/donate')} $variant="light">
-            <Heart size={18} />
             {common.donateBtn}
           </ButtonLink>
           <Outline href={localePath(lang, '/beneficiary')} $variant="secondary">

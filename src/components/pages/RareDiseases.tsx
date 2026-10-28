@@ -36,7 +36,7 @@ const StyledCard = styled(Card)`
   }
 
   p {
-    font-size: 16px;
+    font-size: 1rem;
   }
 `;
 
@@ -46,7 +46,7 @@ const Tag = styled.span`
   border-radius: 999px;
   background: ${colors.sageSoft};
   color: ${colors.brandDeep};
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 700;
 `;
 
@@ -54,7 +54,7 @@ export function DiseaseCard({ item }: { item: Item }) {
   return (
     <StyledCard as="article">
       <Tag>{item.tag}</Tag>
-      <H3>{item.name}</H3>
+      <H3 as="h2">{item.name}</H3>
       <Text>{item.text}</Text>
     </StyledCard>
   );

@@ -72,7 +72,7 @@ const Steps = styled.ol`
   }
 
   p {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 `;
 
@@ -114,7 +114,7 @@ const FormFrame = styled.div`
 
 const Privacy = styled.p`
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${colors.muted};
 `;
 
@@ -126,7 +126,7 @@ export default function Beneficiary({ dictionary }: { dictionary: Dictionary['be
         <Container>
           <TwoCol>
             <InfoCard>
-              <H3>{dictionary.whoTitle}</H3>
+              <H3 as="h2">{dictionary.whoTitle}</H3>
               <CheckList>
                 {dictionary.who.map((w) => (
                   <li key={w}>{w}</li>
@@ -134,7 +134,7 @@ export default function Beneficiary({ dictionary }: { dictionary: Dictionary['be
               </CheckList>
             </InfoCard>
             <InfoCard>
-              <H3>{dictionary.docsTitle}</H3>
+              <H3 as="h2">{dictionary.docsTitle}</H3>
               <CheckList>
                 {dictionary.docs.map((d) => (
                   <li key={d}>{d}</li>

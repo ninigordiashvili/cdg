@@ -32,7 +32,7 @@ const ChannelCard = styled(Card)`
   }
 
   p {
-    font-size: 15px;
+    font-size: 0.9375rem;
     overflow-wrap: anywhere;
   }
 `;
@@ -49,7 +49,7 @@ const Icon = styled.span`
 `;
 
 const Soon = styled.span`
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${colors.muted};
 `;
 
@@ -128,7 +128,7 @@ export default function Contact({
                 >
                   <Icon>{c.icon}</Icon>
                   <div>
-                    <H3>{c.title}</H3>
+                    <H3 as="h2">{c.title}</H3>
                     <Text>{c.text}</Text>
                   </div>
                 </ChannelCard>
@@ -136,7 +136,7 @@ export default function Contact({
                 <ChannelCard key={c.key}>
                   <Icon>{c.icon}</Icon>
                   <div>
-                    <H3>{c.title}</H3>
+                    <H3 as="h2">{c.title}</H3>
                     <Soon>{common.comingSoon}</Soon>
                   </div>
                 </ChannelCard>

@@ -15,7 +15,7 @@ import {
   Section,
   Text,
 } from '../ui/Primitives';
-import { Apple, Bank, Card as CardIcon, Heart } from '../ui/Icons';
+import { Apple, Bank, Card as CardIcon } from '../ui/Icons';
 
 const Grid = styled.div`
   display: grid;
@@ -35,14 +35,15 @@ const Option = styled(Card)<{ $featured?: boolean }>`
   background: ${({ $featured }) => ($featured ? colors.brandDark : colors.white)};
   border-color: ${({ $featured }) => ($featured ? colors.brandDark : colors.line)};
 
+  h2,
   h3 {
     color: ${({ $featured }) => ($featured ? colors.white : colors.ink)};
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   p {
     color: ${({ $featured }) => ($featured ? colors.sageSoft : colors.muted)};
-    font-size: 16px;
+    font-size: 1rem;
   }
 `;
 
@@ -60,7 +61,7 @@ const Soon = styled.span<{ $light?: boolean }>`
   display: inline-block;
   padding: 6px 14px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   background: ${({ $light }) => ($light ? 'rgba(255,255,255,0.14)' : colors.cream)};
   color: ${({ $light }) => ($light ? colors.white : colors.brandDeep)};
@@ -74,12 +75,12 @@ const Account = styled.div`
   border-radius: 14px;
   background: ${colors.creamSoft};
   border: 1px solid ${colors.line};
-  font-size: 14px;
+  font-size: 0.875rem;
 
   code {
     font-family: inherit;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 0.9375rem;
     word-break: break-all;
     color: ${colors.ink};
   }
@@ -154,7 +155,7 @@ export default function Donate({
               <IconBadge $light>
                 <CardIcon size={26} />
               </IconBadge>
-              <H3>{dictionary.online.title}</H3>
+              <H3 as="h2">{dictionary.online.title}</H3>
               <Text>{dictionary.online.text}</Text>
               {site.donationPaymentUrl ? (
                 <ExternalButton
@@ -163,7 +164,6 @@ export default function Donate({
                   rel="noopener noreferrer"
                   $variant="light"
                 >
-                  <Heart size={18} />
                   {dictionary.online.btn}
                 </ExternalButton>
               ) : (
@@ -175,7 +175,7 @@ export default function Donate({
               <IconBadge>
                 <Apple size={26} />
               </IconBadge>
-              <H3>{dictionary.applePay.title}</H3>
+              <H3 as="h2">{dictionary.applePay.title}</H3>
               <Text>{dictionary.applePay.text}</Text>
               {site.donationPaymentUrl ? (
                 <ExternalButton
@@ -196,7 +196,7 @@ export default function Donate({
               <IconBadge>
                 <Bank size={26} />
               </IconBadge>
-              <H3>{dictionary.bank.title}</H3>
+              <H3 as="h2">{dictionary.bank.title}</H3>
               <Text>{dictionary.bank.text}</Text>
               {site.bankAccounts.length > 0 ? (
                 <>

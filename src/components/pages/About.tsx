@@ -77,7 +77,7 @@ const ValueCard = styled(Card)`
   }
 
   p {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 `;
 
