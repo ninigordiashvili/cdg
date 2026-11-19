@@ -1,4 +1,5 @@
 import 'server-only';
+import { applyOverrides, getOverrides } from '@/server/content';
 import type { Locale } from './i18n-config';
 
 const dictionaries = {
@@ -6,7 +7,13 @@ const dictionaries = {
   en: () => import('./dictionary/en.json').then((module) => module.default),
 };
 
-export const getDictionary = async (locale: Locale) =>
+/** Built-in texts, without anything staff edited. The admin compares against these. */
+export const getDefaultDictionary = async (locale: Locale) =>
   dictionaries[locale]?.() ?? dictionaries.ge();
 
-export type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
+export const getDictionary = async (locale: Locale) => {
+  const base = await getDefaultDictionary(locale);
+  return applyOverrides(base, await getOverrides(locale in dictionaries ? locale : 'ge'));
+};
+
+export type Dictionary = Awaited<ReturnType<typeof getDefaultDictionary>>;
