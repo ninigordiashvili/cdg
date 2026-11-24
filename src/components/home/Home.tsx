@@ -105,6 +105,7 @@ const Stats = styled.div`
 `;
 
 const Stat = styled.div`
+  position: relative;
   padding: 28px 32px;
 
   & + & {
@@ -132,6 +133,43 @@ const Stat = styled.div`
     }
   }
 `;
+
+/* Hover/focus panel: a dot visual plus the explanatory text. Opacity only, so the
+   text stays in the accessibility tree at all times. */
+const StatHover = styled.div`
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  min-height: calc(100% + 2px);
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 20px 24px;
+  background: ${colors.white};
+  border: 1px solid ${colors.line};
+  border-radius: 24px;
+  box-shadow: 0 24px 48px rgba(47, 52, 50, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+
+  ${Stat}:hover &,
+  ${Stat}:focus-within & {
+    opacity: 1;
+  }
+
+  p {
+    margin: 0 0 10px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: ${colors.muted};
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+`;
+
 
 /* ---------- Condition features ---------- */
 
@@ -306,12 +344,22 @@ export default function Home({ dictionary, rare, events, lang }: HomeProps) {
 
       <Container>
         <Stats>
-          {dictionary.stats.map((s) => (
-            <Stat key={s.label}>
-              <strong>{s.value}</strong>
-              <span>{s.label}</span>
-            </Stat>
-          ))}
+          {dictionary.stats.map((s, i) => {
+            const paragraphs = dictionary.statsHover[i]?.split('\n\n') ?? [];
+            return (
+              <Stat key={s.label} tabIndex={0}>
+                <strong>{s.value}</strong>
+                <span>{s.label}</span>
+                {paragraphs.length > 0 && (
+                  <StatHover>
+                    {paragraphs.map((p) => (
+                      <p key={p.slice(0, 24)}>{p}</p>
+                    ))}
+                  </StatHover>
+                )}
+              </Stat>
+            );
+          })}
         </Stats>
       </Container>
 

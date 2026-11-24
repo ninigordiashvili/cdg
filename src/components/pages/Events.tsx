@@ -5,8 +5,20 @@ import { colors, mq } from '@/theme';
 import PageHero from '../PageHero';
 import HelpCta from '../HelpCta';
 import { CheckList, Container, H3, Section, Text } from '../ui/Primitives';
+import { Facebook, Instagram } from '../ui/Icons';
+import { site } from '@/config/site';
 
 type Item = Dictionary['events']['items'][number];
+
+export type PostedEvent = {
+  id: number;
+  day: string;
+  month: string;
+  year: string;
+  location: string;
+  title: string;
+  text: string;
+};
 
 const StyledCard = styled.article<{ $compact?: boolean }>`
   display: grid;
@@ -57,6 +69,53 @@ const DateBadge = styled.div`
   }
 `;
 
+const FollowCard = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 40px;
+  border-radius: 28px;
+  background: ${colors.white};
+  border: 1px solid ${colors.line};
+
+  p {
+    margin: 0;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: ${colors.ink};
+  }
+
+  ${mq.tablet} {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 2px solid ${colors.brandDark};
+    color: ${colors.brandDark};
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus-visible {
+    background: ${colors.brandDark};
+    color: ${colors.white};
+  }
+`;
+
 const Body = styled.div`
   display: grid;
   gap: 14px;
@@ -68,17 +127,29 @@ const Body = styled.div`
   }
 `;
 
-export function EventCard({ item, compact }: { item: Item; compact?: boolean }) {
+export function EventCard({
+  item,
+  compact,
+  year,
+  location,
+}: {
+  item: Item;
+  compact?: boolean;
+  year?: string;
+  location?: string;
+}) {
   return (
     <StyledCard $compact={compact}>
       <DateBadge>
         <strong>{item.day}</strong>
         <span>{item.month}</span>
+        {year && <span>{year}</span>}
       </DateBadge>
       <Body>
         <H3 as="h2">{item.title}</H3>
+        {location && <Place>{location}</Place>}
         <Text>{item.text}</Text>
-        {!compact && (
+        {!compact && item.points.length > 0 && (
           <CheckList>
             {item.points.map((p) => (
               <li key={p}>{p}</li>
@@ -90,6 +161,16 @@ export function EventCard({ item, compact }: { item: Item; compact?: boolean }) 
   );
 }
 
+const Place = styled.p`
+  font-weight: 700;
+  color: ${colors.brandDark};
+`;
+
+const GroupTitle = styled.h2`
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: ${colors.ink};
+`;
+
 const List = styled.div`
   display: grid;
   gap: 24px;
@@ -100,10 +181,12 @@ export default function Events({
   dictionary,
   common,
   lang,
+  events = [],
 }: {
   dictionary: Dictionary['events'];
   common: Dictionary['common'];
   lang: string;
+  events?: PostedEvent[];
 }) {
   return (
     <>
@@ -111,10 +194,38 @@ export default function Events({
       <Section>
         <Container>
           <List>
+            {events.length > 0 && (
+              <>
+                <GroupTitle>{dictionary.listTitle}</GroupTitle>
+                {events.map((e) => (
+                  <EventCard
+                    key={e.id}
+                    year={e.year}
+                    location={e.location}
+                    item={{ day: e.day, month: e.month, title: e.title, text: e.text, points: [] }}
+                  />
+                ))}
+                <GroupTitle>{dictionary.campaignsTitle}</GroupTitle>
+              </>
+            )}
             {dictionary.items.map((item) => (
               <EventCard key={item.title} item={item} />
             ))}
-            <Text>{dictionary.follow}</Text>
+            <FollowCard>
+              <p>{dictionary.follow}</p>
+              <SocialLinks>
+                {site.facebookUrl && (
+                  <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer">
+                    <Facebook size={18} /> Facebook
+                  </a>
+                )}
+                {site.instagramUrl && (
+                  <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
+                    <Instagram size={18} /> Instagram
+                  </a>
+                )}
+              </SocialLinks>
+            </FollowCard>
           </List>
         </Container>
       </Section>

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import ColorFilters from '@/components/ColorFilters';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -38,10 +37,12 @@ export default async function Root(props: {
 
   return (
     <html lang={lang === 'ge' ? 'ka' : 'en'} suppressHydrationWarning>
+      <head>
+        {/* Plain inline script (server-rendered only). next/script renders a <script>
+            on the client, which React warns about and never executes. */}
+        <script id="a11y-boot" dangerouslySetInnerHTML={{ __html: a11yBootScript }} />
+      </head>
       <body>
-        <Script id="a11y-boot" strategy="beforeInteractive">
-          {a11yBootScript}
-        </Script>
         <a className="skip-link" href="#main">
           {dictionary.a11y.skip}
         </a>
